@@ -11,13 +11,7 @@ useSeoMeta({
 <template>
   <div>
     <AppHeader />
-
-    <UMain>
-      <UPage>
-        <slot />
-      </UPage>
-    </UMain>
-
+      <slot />
     <AppFooter />
   </div>
 </template>

@@ -2,12 +2,10 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/eslint',
     '@nuxthub/core',
     'nuxt-auth-utils',
-    '@nuxt/ui',
     'nuxt-security',
   ],
   routeRules: {
