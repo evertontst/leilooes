@@ -10,14 +10,6 @@ export default defineAppConfig({
     notice: 'A Starter Template by Estéban "Barbapapazes"',
     smallLinks: [
       {
-        label: 'Privacy Policy',
-        to: '/privacy',
-      },
-      {
-        label: 'Terms of Service',
-        to: '/terms',
-      },
-      {
         label: 'Contact',
         to: 'mailto:esteban@soubiran.dev',
       },

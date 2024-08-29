@@ -15,3 +15,9 @@ useSeoMeta({
     <AppFooter />
   </div>
 </template>
+<style>
+body {
+  background-color: black;
+  color:#fff;
+}
+</style>
