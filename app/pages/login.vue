@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useSession } from 'h3'
 
-const { loggedIn, user, session, fetch, clear } = useUserSession()
+const { loggedIn, user, session, clear } = useUserSession()
 
 definePageMeta({
   middleware: 'guest',
