@@ -12,6 +12,7 @@ declare module '#auth-utils' {
   }
 
   interface UserSession {
+    [key: string]: string
   }
 }
 
