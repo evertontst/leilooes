@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { useSession } from 'h3'
 
+const { loggedIn, user, session, fetch, clear } = useUserSession()
+
 definePageMeta({
-  layout: 'centered',
   middleware: 'guest',
+  layout: 'auth',
 })
 
 const title = 'Login'
@@ -14,9 +16,6 @@ useSeoMeta({
   description,
 })
 
-/**
- * I'm not sure if this is the best way to handle this, but it works.
- */
 const message = useState<string>('message')
 if (import.meta.server) {
   const session = await useSession(useRequestEvent()!, {
@@ -32,29 +31,15 @@ if (import.meta.server) {
 </script>
 
 <template>
-  <div>
-    <UAlert
-      v-if="message"
-      class="mb-8"
-      color="red"
-      variant="outline"
-      :close-button="{ icon: 'i-ph-x-bold', color: 'red', variant: 'link', padded: false }"
-      :description="message"
-      @close="message = ''"
-    />
-
-    <UCard>
-      <AuthForm
-        :title
-        :description
-      >
-        Don't have an account yet? <NuxtLink
-          to="/register"
-          class="text-primary font-medium"
-        >
-          Register
-        </NuxtLink>
-      </AuthForm>
-    </UCard>
+  <div v-if="loggedIn">
+    <h1>Welcome {{ user.login }}!</h1>
+    <p>Logged in since {{ session.loggedInAt }}</p>
+    <button @click="clear">
+      Logout
+    </button>
+  </div>
+  <div v-else>
+    <h1>Not logged in</h1>
+    <a href="/auth/google">Login with Google</a>
   </div>
 </template>

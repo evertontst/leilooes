@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-const description = 'Gavarnie is a modern and flexible SaaS template for Nuxt and NuxtHub that can be used to build any application.'
+const description = 'Leilõões é um moderno e flexível sistema para gerenciamento de leilões.'
 
 useSeoMeta({
-  title: 'Gavarnie - Modern SaaS Template for Nuxt and NuxtHub',
+  title: 'Leilõões',
   description,
 })
 </script>
 
 <template>
-  <div>
-  
-  </div>
+  <homeBanner />
 </template>

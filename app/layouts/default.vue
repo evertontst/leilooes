@@ -11,13 +11,14 @@ useSeoMeta({
 <template>
   <div>
     <AppHeader />
-      <slot />
+    <slot />
     <AppFooter />
   </div>
 </template>
+
 <style>
 body {
-  background-color: black;
-  color:#fff;
+  background-color: #fff;
+  color:#448c74;
 }
 </style>
